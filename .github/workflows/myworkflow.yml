@@ -1,0 +1,22 @@
+# The following example shows utilizing input in a workflow with a manual trigger
+name: myworkflow
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'name of the person'
+        required: true
+        default: 'Ajay'
+      country:
+        description: 'country of the person'
+        required: false
+        
+jobs:
+  greetuser:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hi ${{ github.event.inputs.name }}!"
+          echo "- in ${{ github.event.inputs.country }}!"
