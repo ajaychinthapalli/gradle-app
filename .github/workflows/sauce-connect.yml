@@ -1,4 +1,4 @@
-name: Sauce Connect Proxy Action
+name: Sauce Connect Proxy Action 
 
 on:
   push:
