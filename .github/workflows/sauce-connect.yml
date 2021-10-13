@@ -1,0 +1,19 @@
+name: Sauce Connect Proxy Action
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        name: Action Test
+        steps:
+            - uses: saucelabs/sauce-connect-action@v2
+              with:
+                  username: ${{ secrets.SAUCE_USERNAME }}
+                  accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+                  tunnelIdentifier: github-action-tunnel
+                  scVersion: 4.6.4
