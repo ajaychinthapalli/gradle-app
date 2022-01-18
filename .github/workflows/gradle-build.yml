@@ -11,7 +11,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-      - name: Setup Gradle
+      - name: Gradle Build
         run: assr-ghactions/gradle-build-action@v2.1.0
         with:
           gradle-version: 6.5
